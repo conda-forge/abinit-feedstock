@@ -19,7 +19,7 @@ FC=mpif90
 
 ./config/scripts/makemake
 ./configure --prefix=${PREFIX} \
-            --enable-mpi="yes" --enable-mpi-io="yes" \
+            --with-mpi="yes" --enable-mpi-io="yes" \
             --with-linalg-flavor=${LINALG_FLAVOR} --with-linalg-libs="${LINALG_LIBS}" \
             --with-trio-flavor=netcdf \
             --with-netcdf-incs="${NC_INCS}" --with-netcdf-libs="${NC_LIBS}" \
