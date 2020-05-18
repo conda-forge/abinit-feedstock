@@ -19,6 +19,7 @@ requirements:
     - autoconf
     - automake
     - make
+    - libtool 
     - openmpi-mpifort  # [mpi == 'openmpi']
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
