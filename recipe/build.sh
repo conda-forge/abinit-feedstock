@@ -20,10 +20,9 @@ FC=mpif90
 ./config/scripts/makemake
 ./configure --prefix=${PREFIX} \
             --with-mpi="yes" --enable-mpi-io="yes" \
-            --with-linalg-flavor=${LINALG_FLAVOR} --with-linalg-libs="${LINALG_LIBS}" \
             --with-trio-flavor=netcdf \
+            --with-linalg-flavor=${LINALG_FLAVOR} --with-linalg-libs="${LINALG_LIBS}" \
             --with-netcdf-incs="${NC_INCS}" --with-netcdf-libs="${NC_LIBS}" \
-            --with-dft-flavor="wannier90-fallback" \
             --with-libxc-incs="${XC_INCS}" --with-libxc-libs="${XC_LIBS}"
 make -j${CPU_COUNT}
 make check
