@@ -24,7 +24,6 @@ FC=mpif90
             --with-trio-flavor=netcdf \
             --with-netcdf-incs="${NC_INCS}" --with-netcdf-libs="${NC_LIBS}" \
             --with-dft-flavor="wannier90-fallback" \
-            --enable-gw-dpc="yes" \
             --with-libxc-incs="${XC_INCS}" --with-libxc-libs="${XC_LIBS}"
 make -j${CPU_COUNT}
 make check
