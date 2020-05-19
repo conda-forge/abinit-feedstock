@@ -10,7 +10,7 @@ source:
   sha256: b362bda0ccefbc7254d653d551ba1952aa4a92f9f845208caa3446cb8960ad76
 
 build:
-  number: 1
+  number: 2
   skip: True  # [not linux]
 
 requirements:
@@ -19,6 +19,7 @@ requirements:
     - autoconf
     - automake
     - make
+    - libtool
     - openmpi-mpifort  # [mpi == 'openmpi']
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
