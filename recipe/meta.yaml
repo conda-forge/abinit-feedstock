@@ -29,6 +29,7 @@ requirements:
     - libnetcdf
     - netcdf-fortran
     - libxc
+    - fftw
     - {{ mpi }}
     - libblas
     - liblapack
@@ -38,6 +39,7 @@ requirements:
     - libnetcdf
     - netcdf-fortran
     - libxc
+    - fftw
     - {{ mpi }}
     - scalapack
 
