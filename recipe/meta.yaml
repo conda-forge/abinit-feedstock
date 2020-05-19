@@ -25,23 +25,33 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
-    - hdf5
-    - libnetcdf
-    - netcdf-fortran
     - libxc
     - fftw
     - {{ mpi }}
     - libblas
     - liblapack
     - scalapack
-  run:
+    # need to list hdf5, libnetcdf and netcdf-fortran twice to get version
+    # pinning from conda_build_config and build pinning from {{ mpi_prefix }}
     - hdf5
+    - hdf5 * {{ mpi_prefix }}_*  # [mpi != 'nompi']
     - libnetcdf
+    - libnetcdf * {{ mpi_prefix }}_*  # [mpi != 'nompi']
     - netcdf-fortran
+    - netcdf-fortran * {{ mpi_prefix }}_*  # [mpi != 'nompi']
+  run:
     - libxc
     - fftw
     - {{ mpi }}
     - scalapack
+    # need to list hdf5, libnetcdf and netcdf-fortran twice to get version
+    # pinning from conda_build_config and build pinning from {{ mpi_prefix }}
+    - hdf5
+    - hdf5 * {{ mpi_prefix }}_*  # [mpi != 'nompi']
+    - libnetcdf
+    - libnetcdf * {{ mpi_prefix }}_*  # [mpi != 'nompi']
+    - netcdf-fortran
+    - netcdf-fortran * {{ mpi_prefix }}_*  # [mpi != 'nompi']
 
 test:
   commands:
