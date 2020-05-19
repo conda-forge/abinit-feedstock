@@ -2,7 +2,6 @@
 ./config/scripts/makemake
 ./configure --prefix=${PREFIX} \
             --with-mpi="yes" --enable-mpi-io="yes" \
-            --with-trio-flavor=netcdf \
             IFLAGS="-I${SRC_DIR}/include -I${PREFIX}/finclude" \
             SCALAPACK_LIBS="-L${PREFIX}/lib -lscalapack" \
             LAPACK_LIBS="-L${PREFIX}/lib -llapack" \
