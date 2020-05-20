@@ -20,12 +20,24 @@ FC=mpif90
 ./config/scripts/makemake
 ./configure --prefix=${PREFIX} \
             --enable-mpi="yes" --enable-mpi-io="yes" \
-            --with-linalg-flavor=${LINALG_FLAVOR} --with-linalg-libs="${LINALG_LIBS}" \
             --with-trio-flavor=netcdf \
             --with-netcdf-incs="${NC_INCS}" --with-netcdf-libs="${NC_LIBS}" \
-            --with-dft-flavor="wannier90-fallback" \
-            --enable-gw-dpc="yes" \
-            --with-libxc-incs="${XC_INCS}" --with-libxc-libs="${XC_LIBS}"
+            --with-linalg-flavor=${LINALG_FLAVOR} --with-linalg-libs="${LINALG_LIBS}" \
+            --with-linalg-flavor=${LINALG_FLAVOR} --with-linalg-libs="${LINALG_LIBS}" \
+            --with-netcdf-incs="${NC_INCS}" --with-netcdf-libs="${NC_LIBS}" \
+            --with-libxc-incs="${XC_INCS}" --with-libxc-libs="${XC_LIBS}" \
+            IFLAGS="-I${SRC_DIR}/include -I${PREFIX}/finclude" \
+            SCALAPACK_LIBS="-L${PREFIX}/lib -lscalapack" \
+            LAPACK_LIBS="-L${PREFIX}/lib -llapack" \
+            BLAS_LIBS="-L${PREFIX}/lib -lblas" \
+            FFT_LIBS="-L${PREFIX}/lib -lfftw3" \
+            CC="mpicc" \
+            FC="mpif90" \
+            LD="mpif90 -fopenmp" \
+            CFLAGS="${CFLAGS}" \
+            FFLAGS="${FFLAGS}" \
+            CPPFLAGS="${CPPFLAGS}" \
+            
 make -j${CPU_COUNT}
 make check
 make install-exec
