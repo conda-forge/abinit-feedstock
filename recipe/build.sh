@@ -4,6 +4,9 @@
 ./configure --prefix=${PREFIX} \
             --with-mpi="yes" --enable-mpi-io="yes" \
             --with-libxc="yes" \
+            --with-hdf5="yes" \
+            --with-netcdf="yes" \
+            --with-netcdf_fortran="yes" \
             IFLAGS="-I${SRC_DIR}/include -I${PREFIX}/finclude" \
             CC="mpicc" \
             FC="mpif90" \
