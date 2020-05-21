@@ -3,7 +3,7 @@
 ./config/scripts/makemake
 ./configure --prefix=${PREFIX} \
             --enable-mpi="yes" --enable-mpi-io="yes" \
-            IFLAGS="-I${SRC_DIR}/include -I${PREFIX}/finclude -I${SRC_DIR}/S3DE/iotk/include/" \
+            IFLAGS="-I${SRC_DIR}/include -I${PREFIX}/finclude" \
             CC="mpicc" \
             FC="mpif90" \
             CPP="${CPP}" \
