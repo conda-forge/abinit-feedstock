@@ -37,7 +37,7 @@ requirements:
     - liblapack
     - scalapack
     - fftw
-    # need to list hdf5, libnetcdf and netcdf-fortran twice to get version
+    # need to list libnetcdf and netcdf-fortran twice to get version
     # pinning from conda_build_config and build pinning from {{ mpi_prefix }}
     - libnetcdf
     - libnetcdf * {{ mpi_prefix }}_*  # [mpi != 'nompi']
@@ -48,7 +48,7 @@ requirements:
     - {{ mpi }}
     - scalapack
     - fftw
-    # need to list hdf5, libnetcdf and netcdf-fortran twice to get version
+    # need to list libnetcdf and netcdf-fortran twice to get version
     # pinning from conda_build_config and build pinning from {{ mpi_prefix }}
     - libnetcdf
     - libnetcdf * {{ mpi_prefix }}_*  # [mpi != 'nompi']
