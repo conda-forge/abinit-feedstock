@@ -35,7 +35,6 @@ requirements:
     - {{ mpi }}
     - libblas
     - liblapack
-    - scalapack
     - fftw
     # need to list libnetcdf and netcdf-fortran twice to get version
     # pinning from conda_build_config and build pinning from {{ mpi_prefix }}
@@ -46,7 +45,6 @@ requirements:
   run:
     - libxc
     - {{ mpi }}
-    - scalapack
     - fftw
     # need to list libnetcdf and netcdf-fortran twice to get version
     # pinning from conda_build_config and build pinning from {{ mpi_prefix }}
