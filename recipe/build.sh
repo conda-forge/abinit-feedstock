@@ -12,9 +12,9 @@ export OMPI_MCA_rmaps_base_oversubscribe=yes
             CC="mpicc" \
             FC="mpif90" \
             CPP="${CPP}" \
-            CFLAGS="${CFLAGS} -L${PREFIX}/lib -llapack -lblas" \
-            FFLAGS="${FFLAGS} -L${PREFIX}/lib -llapack -lblas" \
-            CPPFLAGS="${CPPFLAGS} -L${PREFIX}/lib -llapack -lblas" 
+            CFLAGS="${CFLAGS} -L${PREFIX}/lib -llapack -lblas -lnetcdff -lnetcdf -lhdf5_hl -lhdf5" \
+            FFLAGS="${FFLAGS} -L${PREFIX}/lib -llapack -lblas -lnetcdff -lnetcdf -lhdf5_hl -lhdf5" \
+            CPPFLAGS="${CPPFLAGS} -L${PREFIX}/lib -llapack -lblas -lnetcdff -lnetcdf -lhdf5_hl -lhdf5" 
 make -j${CPU_COUNT}
 make check
 make install-exec
