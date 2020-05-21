@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+import subprocess
+
+
 pspgth = """Goedecker-Teter-Hutter  Wed May  8 14:27:44 EDT 1996
 1   1   960508                     zatom,zion,pspdat
 2   1   0    0    2001    0.       pspcod,pspxc,lmax,lloc,mmax,r2well
@@ -7,8 +10,6 @@ pspgth = """Goedecker-Teter-Hutter  Wed May  8 14:27:44 EDT 1996
 0 0                                rp, h1p
   1.36 .2   0.0                    rcutoff, rloc
 """
-with open('01h.pspgth', 'w') as f:
-    f.writelines(pspgth)
 
 tbase1 = """# H2 molecule in a big box
 #
@@ -77,8 +78,6 @@ diemac 2.0        # Although this is not mandatory, it is worth to
 #%% description = H2 molecule in a big box
 #%%<END TEST_INFO>
 """
-with open('tbase1_1.in', 'w') as f:
-    f.writelines(tbase1)
 
 files = """tbase1_1.in
 tbase1_1.out
@@ -87,8 +86,13 @@ tbase1_1o
 tbase1_1
 01h.pspgth
 """
-with open('tbase1_1.files', 'w') as f:
-    f.writelines(files)
 
-import subprocess
-subprocess.check_output("abinit < tbase1_1.files > tbase1_1.log", shell=True)
+
+if __name__ == "__main__":
+    with open('tbase1_1.files', 'w') as f:
+        f.writelines(files)
+    with open('tbase1_1.in', 'w') as f:
+        f.writelines(tbase1)
+    with open('01h.pspgth', 'w') as f:
+        f.writelines(pspgth)
+    subprocess.check_output("abinit < tbase1_1.files > tbase1_1.log", shell=True)
