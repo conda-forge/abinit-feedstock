@@ -1,17 +1,4 @@
-#!/usr/bin/env python
-import subprocess
-
-
-pspgth = """Goedecker-Teter-Hutter  Wed May  8 14:27:44 EDT 1996
-1   1   960508                     zatom,zion,pspdat
-2   1   0    0    2001    0.       pspcod,pspxc,lmax,lloc,mmax,r2well
-0.2000000 -4.0663326  0.6778322 0 0     rloc, c1, c2, c3, c4
-0 0 0                              rs, h1s, h2s
-0 0                                rp, h1p
-  1.36 .2   0.0                    rcutoff, rloc
-"""
-
-tbase1 = """# H2 molecule in a big box
+# H2 molecule in a big box
 #
 # In this input file, the location of the information on this or that line
 # is not important : a keyword is located by the parser, and the related
@@ -77,22 +64,3 @@ diemac 2.0        # Although this is not mandatory, it is worth to
 #%% keywords = 
 #%% description = H2 molecule in a big box
 #%%<END TEST_INFO>
-"""
-
-files = """tbase1_1.in
-tbase1_1.out
-tbase1_1i
-tbase1_1o
-tbase1_1
-01h.pspgth
-"""
-
-
-if __name__ == "__main__":
-    with open('tbase1_1.files', 'w') as f:
-        f.writelines(files)
-    with open('tbase1_1.in', 'w') as f:
-        f.writelines(tbase1)
-    with open('01h.pspgth', 'w') as f:
-        f.writelines(pspgth)
-    subprocess.check_output("abinit < tbase1_1.files > tbase1_1.log", shell=True)
