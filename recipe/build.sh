@@ -4,6 +4,7 @@
 ./configure --prefix=${PREFIX} \
             --enable-mpi="yes" --enable-mpi-io="yes" \
             --with-trio-flavor=netcdf \
+            --with-netcdf-incs="-I${PREFIX}/include" --with-netcdf-libs="-L${PREFIX}/lib -lnetcdff -lnetcdf -lhdf5_hl -lhdf5" \
             IFLAGS="-I${SRC_DIR}/include -I${PREFIX}/finclude" \
             CC="mpicc" \
             FC="mpif90" \
