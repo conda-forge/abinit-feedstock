@@ -7,7 +7,6 @@
             --with-trio-flavor=netcdf \
             --with-fft-flavor=fftw3 \
             --with-fft-libs="-L${PREFIX}/lib/ -lfftw3 -lfftw3f" --with-fft-incs="-I${PREFIX}/include" \
-            --with-libxc-incs="-I${PREFIX}/include" --with-libxc-libs="-L${PREFIX}/lib -lxcf90 -lxc" \
             IFLAGS="-I${SRC_DIR}/include -I${PREFIX}/finclude" \
             CC="mpicc" \
             FC="mpif90" \
