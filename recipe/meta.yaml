@@ -54,12 +54,15 @@ requirements:
     - netcdf-fortran * {{ mpi_prefix }}_*  # [mpi != 'nompi']
 
 test:
+  files:
+    - run_test.py
   commands:
     - abinit --help
     - test -x ${PREFIX}/bin/anaddb
     - test -x ${PREFIX}/bin/mrgddb
     - mrgdv --help
     - test -x ${PREFIX}/bin/cut3d
+    - python run_test.py
 
 about:
   home: https://www.abinit.org
