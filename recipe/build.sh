@@ -2,7 +2,7 @@
 
 ./config/scripts/makemake
 ./configure --prefix=${PREFIX} \
-            --enable-mpi="yes" --enable-mpi-io="yes" \
+            --with-mpi="yes" --enable-mpi-io="yes" \
             IFLAGS="-I${SRC_DIR}/include -I${PREFIX}/finclude" \
             CC="mpicc" \
             FC="mpif90" \
