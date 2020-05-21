@@ -59,11 +59,6 @@ test:
     - tbase1_1.files
     - tbase1_1.in
   commands:
-    - abinit --help
-    - test -x ${PREFIX}/bin/anaddb
-    - test -x ${PREFIX}/bin/mrgddb
-    - mrgdv --help
-    - test -x ${PREFIX}/bin/cut3d
     - abinit < tbase1_1.files > tbase1_1.log
 
 about:
