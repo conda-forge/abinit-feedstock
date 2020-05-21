@@ -10,7 +10,7 @@ source:
   sha256: b362bda0ccefbc7254d653d551ba1952aa4a92f9f845208caa3446cb8960ad76
 
 build:
-  number: 5
+  number: 6
   skip: True  # [not linux]
 
 {% if mpi != 'nompi' %}
@@ -54,12 +54,12 @@ requirements:
     - netcdf-fortran * {{ mpi_prefix }}_*  # [mpi != 'nompi']
 
 test:
+  files:
+    - 01h.pspgth
+    - tbase1_1.files
+    - tbase1_1.in
   commands:
-    - abinit --help
-    - test -x ${PREFIX}/bin/anaddb
-    - test -x ${PREFIX}/bin/mrgddb
-    - mrgdv --help
-    - test -x ${PREFIX}/bin/cut3d
+    - abinit < tbase1_1.files > tbase1_1.log
 
 about:
   home: https://www.abinit.org
