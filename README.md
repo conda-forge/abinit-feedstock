@@ -160,4 +160,5 @@ Feedstock Maintainers
 
 * [@gmatteo](https://github.com/gmatteo/)
 * [@jan-janssen](https://github.com/jan-janssen/)
+* [@jmbeuken](https://github.com/jmbeuken/)
 
