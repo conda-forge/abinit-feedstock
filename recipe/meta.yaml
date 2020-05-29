@@ -35,6 +35,7 @@ requirements:
     - libblas
     - liblapack
     - libxc <5.0
+    - zlib
     # need to list libnetcdf and netcdf-fortran twice to get version
     # pinning from conda_build_config and build pinning from {{ mpi_prefix }}
     - hdf5
