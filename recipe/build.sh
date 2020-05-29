@@ -2,16 +2,18 @@
 
 ./config/scripts/makemake
 ./configure --prefix=${PREFIX} \
-            --enable-mpi="yes" --enable-mpi-io="yes" \
-            --with-trio-flavor=netcdf \
-            --with-netcdf-incs="-I${PREFIX}/include" --with-netcdf-libs="-L${PREFIX}/lib -lnetcdff -lnetcdf -lhdf5_hl -lhdf5" \
+            --with-mpi="yes" --enable-mpi-io="yes" \
+            --with-libxc="yes" \
+            --with-hdf5="yes" \
+            --with-netcdf="yes" \
+            --with-netcdf_fortran="yes" \
             IFLAGS="-I${SRC_DIR}/include -I${PREFIX}/finclude" \
             CC="mpicc" \
             FC="mpif90" \
             CPP="${CPP}" \
-            CFLAGS="${CFLAGS} -L${PREFIX}/lib -llapack -lblas" \
-            FFLAGS="${FFLAGS} -L${PREFIX}/lib -llapack -lblas" \
-            CPPFLAGS="${CPPFLAGS} -L${PREFIX}/lib -llapack -lblas" 
+            CFLAGS="${CFLAGS} -L${PREFIX}/lib -llapack -lblas -lnetcdff -lnetcdf -lhdf5_hl -lhdf5 -lxcf90 -lxc" \
+            FFLAGS="${FFLAGS} -L${PREFIX}/lib -llapack -lblas -lnetcdff -lnetcdf -lhdf5_hl -lhdf5 -lxcf90 -lxc" \
+            CPPFLAGS="${CPPFLAGS} -L${PREFIX}/lib -llapack -lblas -lnetcdff -lnetcdf -lhdf5_hl -lhdf5 -lxcf90 -lxc" 
 make -j${CPU_COUNT}
 make check
 make install-exec
