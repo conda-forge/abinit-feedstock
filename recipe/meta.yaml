@@ -10,7 +10,7 @@ source:
   sha256: b362bda0ccefbc7254d653d551ba1952aa4a92f9f845208caa3446cb8960ad76
 
 build:
-  number: 6
+  number: 7
   skip: True  # [not linux]
 
 {% if mpi != 'nompi' %}
@@ -80,3 +80,4 @@ about:
 extra:
   recipe-maintainers:
     - jan-janssen
+    - gmatteo
