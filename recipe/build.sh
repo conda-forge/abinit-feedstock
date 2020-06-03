@@ -5,7 +5,7 @@
             --with-mpi="yes" --enable-mpi-io="yes" \
             --with-libxc="yes" \
             --with-hdf5="yes" \
-            --with-fft-flavor=fftw3 \
+            --with-fft-flavor="pfft" \
             --with-netcdf="yes" \
             --with-netcdf_fortran="yes" \
             CC="mpicc" \
