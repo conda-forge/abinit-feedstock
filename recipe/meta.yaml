@@ -32,6 +32,7 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - {{ mpi }}  # [mpi != 'nompi']
+    - _openmp_mutex
     - libblas
     - liblapack
     - libxc <5.0
