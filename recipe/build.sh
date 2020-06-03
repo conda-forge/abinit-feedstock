@@ -12,12 +12,15 @@ if [[ "$mpi" == "openmpi" ]]; then
     export CC="mpicc"
     export FC="mpifort"
     enable_mpi="yes"
+    enable_netcdf_fortran="no"
 elif [[ "$mpi" == "mpich" ]]; then
     export CC="mpicc"
     export FC="mpif90"
     enable_mpi="yes"
+    enable_netcdf_fortran="yes"
 else
     enable_mpi="no"
+    enable_netcdf_fortran="no"
 fi
 
 ./config/scripts/makemake
@@ -26,7 +29,7 @@ fi
             --with-libxc="yes" \
             --with-hdf5="yes" \
             --with-netcdf="yes" \
-            --with-netcdf_fortran="yes" \
+            --with-netcdf_fortran=${enable_netcdf_fortran} \
             CC=${CC} \
             FC=${FC} \
             CPP="${CPP}" \
