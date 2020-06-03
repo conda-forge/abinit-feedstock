@@ -7,6 +7,7 @@
             --with-hdf5="yes" \
             --with-netcdf="yes" \
             --with-netcdf_fortran="yes" \
+            --with-fft-flavor="fftw3" \
             CC="mpicc" \
             FC="mpif90" \
             CPP="${CPP}" \
