@@ -10,6 +10,7 @@
             CC="mpicc" \
             FC="mpif90" \
             CPP="${CPP}" \
+            IFLAGS="-I${SRC_DIR}/include -I${PREFIX}/finclude" \
             FFT_LIBS="-L${PREFIX}/lib -lfftw3 -lfftw3f -lfftw3_mpi" \
             CFLAGS="${CFLAGS} -L${PREFIX}/lib -llapack -lblas -lnetcdff -lnetcdf -lhdf5_hl -lhdf5 -lxcf90 -lxc -lfftw3 -lfftw3f -lfftw3_mpi" \
             FFLAGS="${FFLAGS} -L${PREFIX}/lib -llapack -lblas -lnetcdff -lnetcdf -lhdf5_hl -lhdf5 -lxcf90 -lxc -lfftw3 -lfftw3f -lfftw3_mpi" \
