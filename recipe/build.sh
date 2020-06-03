@@ -12,7 +12,6 @@
             CC="mpicc" \
             FC="mpif90" \
             CPP="${CPP}" \
-            IFLAGS="-I${SRC_DIR}/include -I${PREFIX}/finclude" \
             FFTW3_CPPFLAGS="${CPPFLAGS} -L${PREFIX}/lib -lfftw3 -lfftw3f -lfftw3f_mpi -lfftw3_mpi -lfftw3_threads -lfftw3_omp -lfftw3f_threads -lfftw3f_omp" \
             FFTW3_FCFLAGS="${FFLAGS} -L${PREFIX}/lib -lfftw3 -lfftw3f -lfftw3f_mpi -lfftw3_mpi -lfftw3_threads -lfftw3_omp -lfftw3f_threads -lfftw3f_omp" \
             FFTW3_LIBS="-L${PREFIX}/lib -lfftw3 -lfftw3f -lfftw3f_mpi -lfftw3_mpi -lfftw3_threads -lfftw3_omp -lfftw3f_threads -lfftw3f_omp" \
