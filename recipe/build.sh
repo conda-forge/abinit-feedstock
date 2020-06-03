@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Try to debug openMPI
+if [[ "$mpi" == "openmpi" ]]; then
+    export OMPI_MCA_plm=isolated
+    export OMPI_MCA_rmaps_base_oversubscribe=yes
+    export OMPI_MCA_btl_vader_single_copy_mechanism=none
+    mpiexec="mpiexec --allow-run-as-root"
+fi
+
 ./config/scripts/makemake
 ./configure --prefix=${PREFIX} \
             --with-mpi="yes" --enable-mpi-io="yes" \
