@@ -10,10 +10,10 @@ source:
   sha256: fbea29f531f14f7a6c24c3103d362881995213a45077204a7eec84057b7bb6f5
 
 build:
-  number: 0
+  number: 1
   skip: True  # [not linux]
 
-{% if mpi != 'nompi' %}
+{% if mpi == 'mpich' %}
 {% set mpi_prefix = "mpi_" + mpi %}
 {% else %}
 {% set mpi_prefix = "nompi" %}
