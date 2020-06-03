@@ -12,7 +12,7 @@ if [[ "$mpi" == "openmpi" ]]; then
     export CC="mpicc"
     export FC="mpif90"
     enable_mpi="yes"
-    export LD="mpif90 -fopenmpi -fopenmp" \
+    export LD="mpif90 -fopenmpi -fopenmp"
 elif [[ "$mpi" == "mpich" ]]; then
     export CC="mpicc"
     export FC="mpif90"
