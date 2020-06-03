@@ -5,12 +5,12 @@ if [[ "$mpi" == "openmpi" ]]; then
     export OMPI_MCA_plm=isolated
     export OMPI_MCA_rmaps_base_oversubscribe=yes
     export OMPI_MCA_btl_vader_single_copy_mechanism=none
-    export CFLAGS="${CFLAGS} -fopenmp"
-    export CPPFLAGS="${CPPFLAGS} -fopenmp"
-    export FFLAGS="${FFLAGS} -fopenmp"
-    export LDFLAGS="${LDFLAGS} -fopenmp"
+    export CFLAGS="${CFLAGS} -fopenmp -lmpi"
+    export CPPFLAGS="${CPPFLAGS} -fopenmp -lmpi"
+    export FFLAGS="${FFLAGS} -fopenmp -lmpi"
+    export LDFLAGS="${LDFLAGS} -fopenmp -lmpi"
     export CC="mpicc"
-    export FC="mpif90"
+    export FC="mpifort"
     enable_mpi="yes"
 elif [[ "$mpi" == "mpich" ]]; then
     export CC="mpicc"
