@@ -36,6 +36,7 @@ requirements:
     - liblapack
     - libxc <5.0
     - zlib
+    - _openmp_mutex
     # need to list libnetcdf and netcdf-fortran twice to get version
     # pinning from conda_build_config and build pinning from {{ mpi_prefix }}
     - fftw
@@ -49,15 +50,9 @@ requirements:
   run:
     - {{ mpi }}
     - libxc <5.0
-    # need to list libnetcdf and netcdf-fortran twice to get version
-    # pinning from conda_build_config and build pinning from {{ mpi_prefix }}
-    - fftw
     - fftw * {{ mpi_prefix }}_*  # [mpi != 'nompi']
-    - hdf5
     - hdf5 * {{ mpi_prefix }}_*  # [mpi != 'nompi']
-    - libnetcdf
     - libnetcdf * {{ mpi_prefix }}_*  # [mpi != 'nompi']
-    - netcdf-fortran
     - netcdf-fortran * {{ mpi_prefix }}_*  # [mpi != 'nompi']
 
 test:
