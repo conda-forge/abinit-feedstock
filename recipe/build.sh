@@ -13,6 +13,7 @@ if [[ "$mpi" == "openmpi" ]]; then
     export FC="mpif90"
     enable_mpi="yes"
     export LD="mpif90 -fopenmpi -fopenmp"
+    export LDFLAGS="${LDFLAGS} -L${PREFIX}/lib -llapack -lblas -lnetcdff -lnetcdf -lhdf5_hl -lhdf5 -lxcf90 -lxc -lmpi -fopenmp"
 elif [[ "$mpi" == "mpich" ]]; then
     export CC="mpicc"
     export FC="mpif90"
@@ -32,6 +33,7 @@ fi
             FC=${FC} \
             CPP="${CPP}" \
             LD="${LD}" \
+            LDFLAGS="${LDFLAGS}" \
             CFLAGS="${CFLAGS} -L${PREFIX}/lib -llapack -lblas -lnetcdff -lnetcdf -lhdf5_hl -lhdf5 -lxcf90 -lxc" \
             FFLAGS="${FFLAGS} -L${PREFIX}/lib -llapack -lblas -lnetcdff -lnetcdf -lhdf5_hl -lhdf5 -lxcf90 -lxc" \
             CPPFLAGS="${CPPFLAGS} -L${PREFIX}/lib -llapack -lblas -lnetcdff -lnetcdf -lhdf5_hl -lhdf5 -lxcf90 -lxc" 
