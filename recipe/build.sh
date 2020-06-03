@@ -10,17 +10,15 @@ if [[ "$mpi" == "openmpi" ]]; then
     export FFLAGS="${FFLAGS} -fopenmp -lmpi"
     export LDFLAGS="${LDFLAGS} -fopenmp -lmpi"
     export CC="mpicc"
-    export FC="mpifort"
+    export FC="mpif90"
     enable_mpi="yes"
-    enable_netcdf_fortran="no"
+    export LD="mpif90 -fopenmpi -fopenmp" \
 elif [[ "$mpi" == "mpich" ]]; then
     export CC="mpicc"
     export FC="mpif90"
     enable_mpi="yes"
-    enable_netcdf_fortran="yes"
 else
     enable_mpi="no"
-    enable_netcdf_fortran="no"
 fi
 
 ./config/scripts/makemake
@@ -29,10 +27,11 @@ fi
             --with-libxc="yes" \
             --with-hdf5="yes" \
             --with-netcdf="yes" \
-            --with-netcdf_fortran=${enable_netcdf_fortran} \
+            --with-netcdf_fortran="yes" \
             CC=${CC} \
             FC=${FC} \
             CPP="${CPP}" \
+            LD="${LD}" \
             CFLAGS="${CFLAGS} -L${PREFIX}/lib -llapack -lblas -lnetcdff -lnetcdf -lhdf5_hl -lhdf5 -lxcf90 -lxc" \
             FFLAGS="${FFLAGS} -L${PREFIX}/lib -llapack -lblas -lnetcdff -lnetcdf -lhdf5_hl -lhdf5 -lxcf90 -lxc" \
             CPPFLAGS="${CPPFLAGS} -L${PREFIX}/lib -llapack -lblas -lnetcdff -lnetcdf -lhdf5_hl -lhdf5 -lxcf90 -lxc" 
