@@ -1,11 +1,15 @@
 #!/bin/bash
 
-# Try to debug openMPI
+# MPI settings 
 if [[ "$mpi" == "openmpi" ]]; then
     export OMPI_MCA_plm=isolated
     export OMPI_MCA_rmaps_base_oversubscribe=yes
     export OMPI_MCA_btl_vader_single_copy_mechanism=none
-    mpiexec="mpiexec --allow-run-as-root"
+    export CC="mpicc"
+    export FC="mpif90"
+elif [[ "$mpi" == "mpich" ]]; then
+    export CC="mpicc"
+    export FC="mpif90"
 fi
 
 ./config/scripts/makemake
@@ -15,8 +19,8 @@ fi
             --with-hdf5="yes" \
             --with-netcdf="yes" \
             --with-netcdf_fortran="yes" \
-            CC="mpicc" \
-            FC="mpif90" \
+            CC=${CC} \
+            FC=${FC} \
             CPP="${CPP}" \
             CFLAGS="${CFLAGS} -L${PREFIX}/lib -llapack -lblas -lnetcdff -lnetcdf -lhdf5_hl -lhdf5 -lxcf90 -lxc" \
             FFLAGS="${FFLAGS} -L${PREFIX}/lib -llapack -lblas -lnetcdff -lnetcdf -lhdf5_hl -lhdf5 -lxcf90 -lxc" \
