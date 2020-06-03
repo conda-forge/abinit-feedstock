@@ -36,9 +36,10 @@ requirements:
     - liblapack
     - libxc <5.0
     - zlib
-    - fftw3
     # need to list libnetcdf and netcdf-fortran twice to get version
     # pinning from conda_build_config and build pinning from {{ mpi_prefix }}
+    - fftw
+    - fftw * {{ mpi_prefix }}_*  # [mpi != 'nompi']
     - hdf5
     - hdf5 * {{ mpi_prefix }}_*  # [mpi != 'nompi']
     - libnetcdf
@@ -50,6 +51,8 @@ requirements:
     - libxc <5.0
     # need to list libnetcdf and netcdf-fortran twice to get version
     # pinning from conda_build_config and build pinning from {{ mpi_prefix }}
+    - fftw
+    - fftw * {{ mpi_prefix }}_*  # [mpi != 'nompi']
     - hdf5
     - hdf5 * {{ mpi_prefix }}_*  # [mpi != 'nompi']
     - libnetcdf
