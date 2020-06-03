@@ -16,7 +16,7 @@ elif [[ "$mpi" == "mpich" ]]; then
     export CC="mpicc"
     export FC="mpif90"
     enable_mpi="yes"
-else:
+else
     enable_mpi="no"
 fi
 
