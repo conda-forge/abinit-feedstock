@@ -13,7 +13,7 @@
             FC="mpifort" \
             CXX="mpicxx" \
             CFLAGS="${CFLAGS}" \
-            FFLAGS="${FFLAGS}" \
+            FCFLAGS="${FFLAGS}" \
             CPPFLAGS="${CPPFLAGS}" \
             LDFLAGS="${LDFLAGS} -lfftw3f"
 make -j${CPU_COUNT}
