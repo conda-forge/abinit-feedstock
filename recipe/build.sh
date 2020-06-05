@@ -15,7 +15,7 @@
             CFLAGS="${CFLAGS}" \
             FFLAGS="${FFLAGS}" \
             CPPFLAGS="${CPPFLAGS}" \
-            LDFLAGS="${LDFLAGS}"
+            LDFLAGS="${LDFLAGS} -lfftw3f"
 make -j${CPU_COUNT}
 make check
 make install-exec
