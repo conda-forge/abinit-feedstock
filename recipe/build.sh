@@ -14,7 +14,7 @@
             CXX="mpicxx" \
             CFLAGS="${CFLAGS}" \
             FFLAGS="${FFLAGS}" \
-            FCFLAGS="${FFLAGS}" \
+            FCFLAGS="${FCFLAGS}" \
             CPPFLAGS="${CPPFLAGS}" \
             LDFLAGS="${LDFLAGS} -lfftw3f"
 make -j${CPU_COUNT}
