@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/abinit/abinit/archive/{{ version }}.tar.gz
   sha256: fbea29f531f14f7a6c24c3103d362881995213a45077204a7eec84057b7bb6f5
+  patches:
+    - optim.patch
 
 build:
   number: 2
