@@ -12,7 +12,7 @@ source:
     - optim.patch
 
 build:
-  number: 2
+  number: 3
   skip: True  # [not linux]
 
 {% if mpi != 'nompi' %}
