@@ -1,18 +1,18 @@
 {% set name = "abinit" %}
-{% set version = "9.0.4" %}
+{% set version = "9.4.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/abinit/abinit/archive/{{ version }}.tar.gz
-  sha256: fbea29f531f14f7a6c24c3103d362881995213a45077204a7eec84057b7bb6f5
+  url: https://github.com/abinit/abinit/archive/v{{ version }}.tar.gz
+  sha256: a9abd917f157aff0130b0a66015b3dfc94310f7a0f5b3aafea217100716263bd
   patches:
     - optim.patch
 
 build:
-  number: 3
+  number: 0
   skip: True  # [not linux]
 
 {% if mpi != 'nompi' %}
@@ -64,7 +64,7 @@ test:
     - tbase1_1.in
   commands:
     - abinit -b
-    - abinit < tbase1_1.files > tbase1_1.log
+    - abinit tbase1_1.in
 
 about:
   home: https://www.abinit.org
