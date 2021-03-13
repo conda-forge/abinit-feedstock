@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/abinit/abinit/archive/{{ version }}.tar.gz
+  url: https://github.com/abinit/abinit/archive/v{{ version }}.tar.gz
   sha256: a9abd917f157aff0130b0a66015b3dfc94310f7a0f5b3aafea217100716263bd
   patches:
     - optim.patch
