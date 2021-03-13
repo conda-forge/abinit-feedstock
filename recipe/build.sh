@@ -7,7 +7,7 @@
             --with-hdf5="yes" \
             --with-fftw3="yes" \
             --with-netcdf="yes" \
-            --with-netcdf_fortran="yes" \
+            --with-netcdf-fortran="yes" \
             --with-fft-flavor="fftw3" \
             CC="mpicc" \
             FC="mpifort" \
