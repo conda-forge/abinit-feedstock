@@ -1,5 +1,5 @@
 {% set name = "abinit" %}
-{% set version = "9.4.4" %}
+{% set version = "9.4.0" %}
 
 package:
   name: {{ name|lower }}
