@@ -7,8 +7,8 @@ set -ex
             --with-libxc="yes" \
             --with-hdf5="yes" \
             --with-fftw3="yes" \
-            --with-netcdf="yes" \
-            --with-netcdf-fortran="yes" \
+            --with-netcdf=$(nc-config --prefix) \
+            --with-netcdf_fortran=$(nf-config --prefix) \
             --with-fft-flavor="fftw3" \
             CC="mpicc" \
             FC="mpifort" \
