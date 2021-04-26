@@ -17,7 +17,9 @@ set -ex
             FFLAGS="${FFLAGS}" \
             FCFLAGS="${FCFLAGS}" \
             CPPFLAGS="${CPPFLAGS}" \
-            LDFLAGS="${LDFLAGS} -lfftw3f" || tail -n 1000 config.log
+            LDFLAGS="${LDFLAGS} -lfftw3f"
+cat config.log
+
 make -j${CPU_COUNT}
 make check
 make install-exec
