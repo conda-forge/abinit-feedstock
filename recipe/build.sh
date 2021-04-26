@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ex
 
 ./config/scripts/makemake
 ./configure --prefix=${PREFIX} \
@@ -16,7 +17,7 @@
             FFLAGS="${FFLAGS}" \
             FCFLAGS="${FCFLAGS}" \
             CPPFLAGS="${CPPFLAGS}" \
-            LDFLAGS="${LDFLAGS} -lfftw3f"
+            LDFLAGS="${LDFLAGS} -lfftw3f" || tail -n 1000 config.log
 make -j${CPU_COUNT}
 make check
 make install-exec
