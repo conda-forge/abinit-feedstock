@@ -1,5 +1,7 @@
 mpi:
   - mpich
+  - openmpi
 
 pin_run_as_build:
   mpich: x.x
+  oenmpi: x.x
