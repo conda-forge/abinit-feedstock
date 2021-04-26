@@ -21,5 +21,9 @@ set -ex
 cat config.log
 
 make -j${CPU_COUNT}
+
 make check
+./tests/runtests.py v1 -j${CPU_COUNT} -o1 -n1
+./tests/runtests.py paral mpiio -n4 -o1
+
 make install-exec
