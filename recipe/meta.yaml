@@ -48,14 +48,14 @@ requirements:
     - libnetcdf
     - libnetcdf * {{ mpi_prefix }}_*  # [mpi != 'nompi']
     - netcdf-fortran
-    - netcdf-fortran 4.5.2 {{ mpi_prefix }}_*  # [mpi != 'nompi']
+    - netcdf-fortran * {{ mpi_prefix }}_*  # [mpi != 'nompi']
   run:
     - {{ mpi }}
     - libxc <5.0
     - fftw * {{ mpi_prefix }}_*  # [mpi != 'nompi']
     - hdf5 * {{ mpi_prefix }}_*  # [mpi != 'nompi']
     - libnetcdf * {{ mpi_prefix }}_*  # [mpi != 'nompi']
-    - netcdf-fortran 4.5.2 {{ mpi_prefix }}_*  # [mpi != 'nompi']
+    - netcdf-fortran * {{ mpi_prefix }}_*  # [mpi != 'nompi']
 
 test:
   files:
