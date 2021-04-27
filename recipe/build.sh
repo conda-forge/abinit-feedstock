@@ -27,6 +27,7 @@ fi
 make -j${CPU_COUNT}
 
 make check
+make test_v1
 ./tests/runtests.py v1 -j${CPU_COUNT} -o1 -n1
 ./tests/runtests.py paral mpiio -n4 -o1
 
