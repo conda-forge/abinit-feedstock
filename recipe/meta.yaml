@@ -60,6 +60,7 @@ requirements:
     - hdf5 * {{ mpi_prefix }}_*  # [mpi != 'nompi']
     - libnetcdf * {{ mpi_prefix }}_*  # [mpi != 'nompi']
     - netcdf-fortran * {{ mpi_prefix }}_*  # [mpi != 'nompi']
+    - openssh   # [mpi == 'openmpi']
 
 test:
   files:

@@ -20,9 +20,9 @@ set -ex
             LDFLAGS="${LDFLAGS} -lfftw3f"
 cat config.log
 
-if [[ "$mpi" == "openmpi" ]]; then
-    export OMPI_MCA_plm_rsh_agent=sh
-fi
+#if [[ "$mpi" == "openmpi" ]]; then
+#    export OMPI_MCA_plm_rsh_agent=sh
+#fi
 
 make -j${CPU_COUNT}
 
