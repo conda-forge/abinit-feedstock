@@ -1,5 +1,5 @@
 {% set name = "abinit" %}
-{% set version = "9.4.0" %}
+{% set version = "9.4.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/abinit/abinit/archive/v{{ version }}.tar.gz
-  sha256: a9abd917f157aff0130b0a66015b3dfc94310f7a0f5b3aafea217100716263bd
+  sha256: 345a98df01665f3ac123806a832219974a59a31cac704c984f29a744f794e8d4
   patches:
     - optim.patch
 
@@ -20,7 +20,7 @@ build:
 {% else %}
 {% set mpi_prefix = "nompi" %}
 {% endif %}
-  
+
 requirements:
   build:
     - m4
@@ -74,10 +74,10 @@ about:
   summary: 'ABINIT is an atomic-scale simulation software suite.'
 
   description: |
-    ABINIT is a software suite to calculate the optical, mechanical, 
-    vibrational, and other observable properties of materials. Starting 
-    from the quantum equations of density functional theory, you can 
-    build up to advanced applications with perturbation theories based on 
+    ABINIT is a software suite to calculate the optical, mechanical,
+    vibrational, and other observable properties of materials. Starting
+    from the quantum equations of density functional theory, you can
+    build up to advanced applications with perturbation theories based on
     DFT, and many-body Green's functions (GW and DMFT) ...
   doc_url: https://wiki.abinit.org/doku.php
   dev_url: https://github.com/abinit/abinit/
