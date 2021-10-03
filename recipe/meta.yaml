@@ -1,5 +1,5 @@
 {% set name = "abinit" %}
-{% set version = "9.4.2" %}
+{% set version = "9.6.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://github.com/abinit/abinit/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 345a98df01665f3ac123806a832219974a59a31cac704c984f29a744f794e8d4
+  sha256: 777cad7b845daed5feb64c5bf33cea8cbec6d0e2d9b452f48f2b29c2e547f011
   patches:
     - optim.patch
 
 build:
-  number: 1
-  skip: True  # [not linux]
+  number: 0
+  skip: true  # [not linux]
 
 {% if mpi != 'nompi' %}
 {% set mpi_prefix = "mpi_" + mpi %}
@@ -71,7 +71,7 @@ about:
   license: GPL-3.0-only
   license_family: GPL
   license_file: COPYING
-  summary: 'ABINIT is an atomic-scale simulation software suite.'
+  summary: ABINIT is an atomic-scale simulation software suite.
 
   description: |
     ABINIT is a software suite to calculate the optical, mechanical,
