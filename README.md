@@ -1,11 +1,11 @@
-About abinit
-============
+About abinit-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/abinit-feedstock/blob/main/LICENSE.txt)
 
 Home: https://www.abinit.org
 
 Package license: GPL-3.0-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/abinit-feedstock/blob/main/LICENSE.txt)
 
 Summary: ABINIT is an atomic-scale simulation software suite.
 
