@@ -1,5 +1,5 @@
 {% set name = "abinit" %}
-{% set version = "9.8.3" %}
+{% set version = "9.8.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/abinit/abinit/archive/refs/tags/{{ version }}.tar.gz
-  sha256: a665b55c69af1bbccbc221a53ab3b55bc419bb32342ef6ece823093c89bff153
+  sha256: 1b981140cb837c22f037a5dc8ec9769c007517e972ba667396ee300e006f543d
   patches:
     - optim.patch
 
 build:
-  number: 2
+  number: 0
   skip: true  # [not linux]
 
 {% if mpi != 'nompi' %}
