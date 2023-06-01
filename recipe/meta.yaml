@@ -13,7 +13,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [not linux]
+  skip: true  # [win]
 
 {% if mpi != 'nompi' %}
 {% set mpi_prefix = "mpi_" + mpi %}
@@ -38,7 +38,7 @@ requirements:
     - liblapack
     - libxc <5.0
     - zlib
-    - _openmp_mutex
+    - _openmp_mutex  # [linux]
     # need to list libnetcdf and netcdf-fortran twice to get version
     # pinning from conda_build_config and build pinning from {{ mpi_prefix }}
     - fftw
