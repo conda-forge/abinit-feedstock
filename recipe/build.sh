@@ -9,7 +9,7 @@
             --with-netcdf="yes" \
             --with-netcdf-fortran="yes" \
             --with-fft-flavor="fftw3" \
-            FFT_LIBS="-lfftw3 -lfftw3f" \
+            FFTW3_LIBS="-lfftw3 -lfftw3f" \
             CC="mpicc" \
             FC="mpifort" \
             CXX="mpicxx" \
