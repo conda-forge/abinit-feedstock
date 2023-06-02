@@ -9,6 +9,7 @@
             --with-netcdf="yes" \
             --with-netcdf-fortran="yes" \
             --with-fft-flavor="fftw3" \
+            FFTW3_LIBS="-lfftw3 -lfftw3f" \
             CC="mpicc" \
             FC="mpifort" \
             CXX="mpicxx" \
@@ -16,7 +17,7 @@
             FFLAGS="${FFLAGS}" \
             FCFLAGS="${FCFLAGS}" \
             CPPFLAGS="${CPPFLAGS}" \
-            LDFLAGS="${LDFLAGS} -lfftw3f"
+            LDFLAGS="${LDFLAGS}"
 make -j${CPU_COUNT}
 make check
 make install-exec
