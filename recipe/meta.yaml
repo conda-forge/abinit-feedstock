@@ -12,7 +12,7 @@ source:
     - optim.patch
 
 build:
-  number: 3
+  number: 4
   skip: true  # [win]
 
 {% if mpi != 'nompi' %}
@@ -31,6 +31,7 @@ requirements:
     - openmpi-mpifort  # [mpi == 'openmpi']
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
     - {{ mpi }}
