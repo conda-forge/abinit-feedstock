@@ -16,6 +16,7 @@
             CFLAGS="${CFLAGS}" \
             FFLAGS="${FFLAGS}" \
             FCFLAGS="${FCFLAGS}" \
+            FCFLAGS_EXTRA="-fallow-argument-mismatch" \
             CPPFLAGS="${CPPFLAGS}" \
             LDFLAGS="${LDFLAGS}"
 make -j${CPU_COUNT}
