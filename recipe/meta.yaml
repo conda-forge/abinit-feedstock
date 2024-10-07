@@ -29,6 +29,7 @@ requirements:
     - make
     - libtool
     - openmpi-mpifort  # [mpi == 'openmpi']
+    - {{ stdlib("c") }}
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
