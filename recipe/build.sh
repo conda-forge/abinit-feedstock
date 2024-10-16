@@ -1,5 +1,9 @@
 #!/bin/bash
 
+export VERSION="10.0.3"
+
+echo $VERSION > .version && echo $VERSION > .tarball-version && ./autogen.sh
+
 ./config/scripts/makemake
 ./configure --prefix=${PREFIX} \
             --with-mpi="yes" --enable-mpi-io="yes" \
