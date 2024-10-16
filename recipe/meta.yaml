@@ -12,6 +12,9 @@ source:
     - optim.patch
 
 build:
+  script: |
+    echo "Running shell command before configuring..."
+    echo {{ version }} > .version && echo {{ version }} > .tarball-version && ./autogen.sh
   number: 0
   skip: true  # [win]
 
