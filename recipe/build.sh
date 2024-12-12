@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export VERSION="10.0.3"
+export VERSION="10.2.5"
 
 echo $VERSION > .version && echo $VERSION > .tarball-version && ./autogen.sh
 

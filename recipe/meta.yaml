@@ -1,5 +1,5 @@
 {% set name = "abinit" %}
-{% set version = "10.0.3" %}
+{% set version = "10.2.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/abinit/abinit/archive/refs/tags/{{ version }}.tar.gz
-  sha256: bd3d319dd6146890d2428a80da5eba1280e07f6e72489612dbad73bbf3043c9d
+  sha256: 7185df9ebdc91c255044f4fdd9dac8bdd9ce3be67a582d6e24e85370e104d74c
   patches:
-    - optim.patch
+    - optim.patch  # [x86_64]
 
 build:
-  number: 3
+  number: 0
   skip: true  # [win]
 
 {% if mpi != 'nompi' %}
@@ -37,7 +37,7 @@ requirements:
     - {{ mpi }}
     - libblas
     - liblapack
-    - libxc <6.0
+    - libxc
     - zlib
     - _openmp_mutex  # [linux]
     # need to list libnetcdf and netcdf-fortran twice to get version
@@ -52,7 +52,7 @@ requirements:
     - netcdf-fortran * {{ mpi_prefix }}_*  # [mpi != 'nompi']
   run:
     - {{ mpi }}
-    - libxc <6.0
+    - libxc
     - fftw * {{ mpi_prefix }}_*  # [mpi != 'nompi']
     - hdf5 * {{ mpi_prefix }}_*  # [mpi != 'nompi']
     - libnetcdf * {{ mpi_prefix }}_*  # [mpi != 'nompi']
