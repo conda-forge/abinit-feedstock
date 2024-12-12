@@ -10,6 +10,7 @@ source:
   sha256: 7185df9ebdc91c255044f4fdd9dac8bdd9ce3be67a582d6e24e85370e104d74c
   patches:
     - optim.patch  # [x86_64]
+    - abinit-libxc-disable-check-for-cross-compile.patch  # [host_platform != target_platform]
 
 build:
   number: 0

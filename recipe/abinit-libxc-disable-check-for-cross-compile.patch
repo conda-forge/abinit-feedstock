@@ -1,0 +1,49 @@
+diff --git i/config/m4/sd_libxc.m4 w/config/m4/sd_libxc.m4
+index 9346003a8f..c9867f8849 100644
+--- i/config/m4/sd_libxc.m4
++++ w/config/m4/sd_libxc.m4
+@@ -290,7 +290,7 @@ AC_DEFUN([_SD_LIBXC_CHECK_USE], [
+     [[
+       int ma, mi, mu;
+       xc_version(&ma, &mi, &mu);
+-    ]])], [sd_libxc_c_ok="yes"], [sd_libxc_c_ok="no"])
++    ]])], [sd_libxc_c_ok="yes"], [sd_libxc_c_ok="yes"])
+   AC_LANG_POP([C])
+   AC_MSG_RESULT([${sd_libxc_c_ok}])
+ 
+@@ -305,7 +305,7 @@ AC_DEFUN([_SD_LIBXC_CHECK_USE], [
+       [[
+         int ma, mi;
+         xc_version(&ma, &mi);
+-      ]])], [sd_libxc_c_ok="yes"], [sd_libxc_c_ok="no"])
++      ]])], [sd_libxc_c_ok="yes"], [sd_libxc_c_ok="yes"])
+     AC_LANG_POP([C])
+     AC_MSG_RESULT([${sd_libxc_c_ok}])
+   fi
+@@ -322,7 +322,7 @@ AC_DEFUN([_SD_LIBXC_CHECK_USE], [
+           implicit none
+           integer :: ma, mi, mu
+           call xc_f90_version(ma, mi, mu)
+-        ]])], [sd_libxc_fortran_ok="yes"], [sd_libxc_fortran_ok="no"])
++        ]])], [sd_libxc_fortran_ok="yes"], [sd_libxc_fortran_ok="yes"])
+       AC_LANG_POP([Fortran])
+       if test "${sd_libxc_fortran_ok}" = "yes"; then
+         test "${sd_fc_sys_incpath}" = "" && sd_fc_sys_incpath="${tmp_incs}"
+@@ -344,7 +344,7 @@ AC_DEFUN([_SD_LIBXC_CHECK_USE], [
+       [[
+         int ma, mi;
+         xc_version(&ma, &mi);
+-      ]])], [sd_libxc_c_ok="yes"], [sd_libxc_c_ok="no"])
++      ]])], [sd_libxc_c_ok="yes"], [sd_libxc_c_ok="yes"])
+     AC_LANG_POP([C])
+     AC_MSG_RESULT([${sd_libxc_c_ok}])
+   fi 
+@@ -366,7 +366,7 @@ AC_DEFUN([_SD_LIBXC_CHECK_USE], [
+     xc_func_end(&func);
+   }
+   if (! has_kxc) {exit(EXIT_FAILURE);}
+-    ]])], [sd_libxc_kxc_ok="yes"], [sd_libxc_kxc_ok="no"])
++    ]])], [sd_libxc_kxc_ok="yes"], [sd_libxc_kxc_ok="yes"])
+   AC_LANG_POP([C])
+   AC_MSG_RESULT([${sd_libxc_kxc_ok}])
+   if test "${sd_libxc_kxc_ok}" = "no"; then
