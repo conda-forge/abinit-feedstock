@@ -5,7 +5,8 @@ export VERSION="10.2.5"
 echo $VERSION > .version && echo $VERSION > .tarball-version && ./autogen.sh
 
 ./config/scripts/makemake
-./configure --prefix=${PREFIX} \
+./configure sd_libxc_enable=yes sd_libxc_c_ok=yes sd_libxc_fortran_ok=yes sd_libxc_kxc_ok=yes sd_libxc_ok=yes \
+            --prefix=${PREFIX} \
             --with-mpi="yes" --enable-mpi-io="yes" \
             --with-libxc="yes" \
             --with-hdf5="yes" \
