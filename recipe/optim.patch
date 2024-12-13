@@ -15,7 +15,7 @@ index 31dd76e83..2ad12aebb 100644
  
  [DEFAULT]
  safe_comp = -O2
--standard_comp = -O2 -mtune=native -march=native 
--aggressive_comp = -O3 -mtune=native -march=native -funroll-loops -faggressive-function-elimination
+-standard_comp = -O2 -march=native 
+-aggressive_comp = -O3 -march=native -funroll-loops -faggressive-function-elimination
 +standard_comp = -O2 -march=nocona -mtune=haswell
 +aggressive_comp = -O3 -march=nocona -mtune=haswell -funroll-loops -faggressive-function-elimination
