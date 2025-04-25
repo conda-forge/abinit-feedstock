@@ -21,11 +21,11 @@ fortran_compiler:
 fortran_compiler_version:
 - '13'
 hdf5:
-- 1.14.4
+- 1.14.6
 libblas:
-- 3.9 *netlib
+- 3.9.* *netlib
 liblapack:
-- 3.9 *netlib
+- 3.9.* *netlib
 libnetcdf:
 - 4.9.2
 mpi:
