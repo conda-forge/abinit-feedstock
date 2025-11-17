@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ex
 
 export VERSION="${PKG_VERSION}"
 
