@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export VERSION="10.0.3"
+export VERSION="${PKG_VERSION}"
 
 echo $VERSION > .version && echo $VERSION > .tarball-version && ./autogen.sh
 
@@ -24,5 +24,7 @@ echo $VERSION > .version && echo $VERSION > .tarball-version && ./autogen.sh
             CPPFLAGS="${CPPFLAGS}" \
             LDFLAGS="${LDFLAGS}"
 make -j${CPU_COUNT}
-make check
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-0}" != "1" ]]; then
+    make check
+fi
 make install-exec
