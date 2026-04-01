@@ -1,0 +1,10 @@
+--- a/config/optim/fc_gnu_default-optim.conf
++++ b/config/optim/fc_gnu_default-optim.conf
+@@ -17,5 +17,5 @@
+
+ [DEFAULT]
+ safe_comp = -O2
+-standard_comp = -O2 -mtune=native -march=native 
+-aggressive_comp = -O3 -mtune=native -march=native -funroll-loops -faggressive-function-elimination
++standard_comp = -O2
++aggressive_comp = -O3 -funroll-loops -faggressive-function-elimination

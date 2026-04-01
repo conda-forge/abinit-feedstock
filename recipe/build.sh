@@ -6,6 +6,7 @@ echo $VERSION > .version && echo $VERSION > .tarball-version && ./autogen.sh
 
 ./config/scripts/makemake
 ./configure --prefix=${PREFIX} \
+            --host=${HOST} \
             --with-mpi="yes" --enable-mpi-io="yes" \
             --with-libxc="yes" \
             --with-hdf5="yes" \
@@ -24,5 +25,7 @@ echo $VERSION > .version && echo $VERSION > .tarball-version && ./autogen.sh
             CPPFLAGS="${CPPFLAGS}" \
             LDFLAGS="${LDFLAGS}"
 make -j${CPU_COUNT}
-make check
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" ]]; then
+    make check
+fi
 make install-exec

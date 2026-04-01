@@ -9,10 +9,13 @@ source:
   url: https://github.com/abinit/abinit/archive/refs/tags/{{ version }}.tar.gz
   sha256: bd3d319dd6146890d2428a80da5eba1280e07f6e72489612dbad73bbf3043c9d
   patches:
-    - optim.patch
+    - optim.patch  # [x86_64]
+    - abinit-optim-cross-compile.patch  # [aarch64]
+    - abinit-libxc-cross-compile.patch  # [aarch64]
+    - abinit-openmp-cross-compile.patch  # [aarch64]
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win]
 
 {% if mpi != 'nompi' %}
