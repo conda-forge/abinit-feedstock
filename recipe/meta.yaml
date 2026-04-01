@@ -85,6 +85,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - mbercx
     - jan-janssen
     - gmatteo
     - jmbeuken
