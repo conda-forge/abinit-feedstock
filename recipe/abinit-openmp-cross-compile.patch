@@ -1,0 +1,9 @@
+--- a/config/m4/conf-openmp.m4
++++ b/config/m4/conf-openmp.m4
+@@ -39,5 +39,5 @@
+ !$OMP END PARALLEL DO
+        close(unit=10)
+-    ]])], [abi_omp_has_collapse="yes"; abi_omp_collapse_result=`cat conftest.collapse 2>/dev/null`; rm -f conftest.collapse], [abi_omp_has_collapse="no"; rm -f conftest.collapse])
++    ]])], [abi_omp_has_collapse="yes"; abi_omp_collapse_result=`cat conftest.collapse 2>/dev/null`; rm -f conftest.collapse], [abi_omp_has_collapse="no"; rm -f conftest.collapse], [abi_omp_has_collapse="yes"; abi_omp_collapse_result="1"])
+   test "${abi_omp_collapse_result}" = "1" || abi_omp_has_collapse="no"
+   AC_MSG_RESULT([${abi_omp_has_collapse}])

@@ -1,0 +1,9 @@
+--- a/config/m4/sd_libxc.m4
++++ b/config/m4/sd_libxc.m4
+@@ -365,5 +365,5 @@
+   }
+   if (! has_kxc) {exit(EXIT_FAILURE);}
+-    ]])], [sd_libxc_kxc_ok="yes"], [sd_libxc_kxc_ok="no"])
++    ]])], [sd_libxc_kxc_ok="yes"], [sd_libxc_kxc_ok="no"], [sd_libxc_kxc_ok="yes"])
+   AC_LANG_POP([C])
+   AC_MSG_RESULT([${sd_libxc_kxc_ok}])

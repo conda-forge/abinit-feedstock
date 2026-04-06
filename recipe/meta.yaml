@@ -9,10 +9,13 @@ source:
   url: https://github.com/abinit/abinit/archive/refs/tags/{{ version }}.tar.gz
   sha256: bd3d319dd6146890d2428a80da5eba1280e07f6e72489612dbad73bbf3043c9d
   patches:
-    - optim.patch
+    - optim.patch  # [x86_64]
+    - abinit-optim-cross-compile.patch  # [aarch64]
+    - abinit-libxc-cross-compile.patch  # [aarch64]
+    - abinit-openmp-cross-compile.patch  # [aarch64]
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win]
 
 {% if mpi != 'nompi' %}
@@ -29,7 +32,7 @@ requirements:
     - make
     - libtool
     - openmpi-mpifort  # [mpi == 'openmpi']
-    #- {{ stdlib("c") }}
+    - {{ stdlib("c") }}
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
@@ -37,7 +40,7 @@ requirements:
     - {{ mpi }}
     - libblas
     - liblapack
-    - libxc <5.0
+    - libxc <7.0
     - zlib
     - _openmp_mutex  # [linux]
     # need to list libnetcdf and netcdf-fortran twice to get version
@@ -52,7 +55,7 @@ requirements:
     - netcdf-fortran * {{ mpi_prefix }}_*  # [mpi != 'nompi']
   run:
     - {{ mpi }}
-    - libxc <5.0
+    - libxc <7.0
     - fftw * {{ mpi_prefix }}_*  # [mpi != 'nompi']
     - hdf5 * {{ mpi_prefix }}_*  # [mpi != 'nompi']
     - libnetcdf * {{ mpi_prefix }}_*  # [mpi != 'nompi']
