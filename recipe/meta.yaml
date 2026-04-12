@@ -15,7 +15,7 @@ source:
     - abinit-openmp-cross-compile.patch  # [aarch64]
 
 build:
-  number: 3
+  number: 4
   skip: true  # [win]
 
 {% if mpi != 'nompi' %}
