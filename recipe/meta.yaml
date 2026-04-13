@@ -1,5 +1,5 @@
 {% set name = "abinit" %}
-{% set version = "10.0.3" %}
+{% set version = "10.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/abinit/abinit/archive/refs/tags/{{ version }}.tar.gz
-  sha256: bd3d319dd6146890d2428a80da5eba1280e07f6e72489612dbad73bbf3043c9d
+  sha256: 656d09af994399c8fad8441ff970fb4199a6f9170cf28d7c0ef6c9109c370491
   patches:
     - optim.patch  # [x86_64]
     - abinit-optim-cross-compile.patch  # [aarch64]
@@ -15,7 +15,7 @@ source:
     - abinit-openmp-cross-compile.patch  # [aarch64]
 
 build:
-  number: 3
+  number: 0
   skip: true  # [win]
 
 {% if mpi != 'nompi' %}
