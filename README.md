@@ -38,24 +38,45 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64</td>
+              <td>linux_64_hdf51.14.6</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9814&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/abinit-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/abinit-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_hdf51.14.6" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64</td>
+              <td>linux_64_hdf52</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9814&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/abinit-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/abinit-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_hdf52" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64</td>
+              <td>linux_aarch64_hdf51.14.6</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9814&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/abinit-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/abinit-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_hdf51.14.6" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_hdf52</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9814&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/abinit-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_hdf52" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_hdf51.14.6</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9814&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/abinit-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_hdf51.14.6" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_hdf52</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9814&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/abinit-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_hdf52" alt="variant">
                 </a>
               </td>
             </tr>
@@ -190,4 +211,5 @@ Feedstock Maintainers
 * [@gmatteo](https://github.com/gmatteo/)
 * [@jan-janssen](https://github.com/jan-janssen/)
 * [@jmbeuken](https://github.com/jmbeuken/)
+* [@mbercx](https://github.com/mbercx/)
 
